@@ -29,19 +29,23 @@
 
             <div class="sidebar-bottom">
                 <div class="sidebar-help"><span class="sidebar-help__spark">✦</span><strong>Estamos começando</strong><p>Seu espaço está pronto para ganhar vida.</p></div>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button class="logout-button" type="submit"><span aria-hidden="true">↪</span> Sair da conta</button>
-                </form>
             </div>
         </aside>
 
         <main class="dashboard-content">
             <header class="dashboard-topbar">
                 <div class="dashboard-breadcrumb">Painel <span>/</span> Visão geral</div>
-                <div class="account-chip">
-                    <span class="account-chip__avatar">{{ mb_substr(auth()->user()->name, 0, 1) }}</span>
-                    <span>{{ auth()->user()->name }}</span>
+                <div class="dashboard-topbar__actions">
+                    <div class="account-chip">
+                        <span class="account-chip__avatar">{{ mb_substr(auth()->user()->name, 0, 1) }}</span>
+                        <span>{{ auth()->user()->name }}</span>
+                    </div>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="logout-button logout-button--header" type="submit">
+                            <span aria-hidden="true">↪</span> Sair da conta
+                        </button>
+                    </form>
                 </div>
             </header>
 

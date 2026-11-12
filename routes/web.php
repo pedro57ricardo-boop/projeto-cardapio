@@ -26,3 +26,7 @@ Route::post('/logout', function (Request $request) {
 
     return redirect()->route('home');
 })->middleware('auth')->name('logout');
+
+Route::get('/clientes', function () {
+    return view('clientes');
+});

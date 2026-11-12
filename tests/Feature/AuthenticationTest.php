@@ -59,7 +59,12 @@ class AuthenticationTest extends TestCase
             ->assertRedirect(route('dashboard'));
 
         $this->assertAuthenticatedAs($user);
-        $this->get(route('dashboard'))->assertOk()->assertSee('João')->assertSee('0');
+        $this->get(route('dashboard'))
+            ->assertOk()
+            ->assertSee('João')
+            ->assertSee('Sair da conta')
+            ->assertSee(route('logout'))
+            ->assertSee('0');
     }
 
     public function test_admin_is_protected_and_logout_ends_the_session(): void
