@@ -18,6 +18,18 @@ Route::view('/admin', 'dashboard')
     ->middleware('auth')
     ->name('dashboard');
 
+Route::view('/cardapios', 'cardapios', ['items' => config('cardapio.items')])
+    ->middleware('auth')
+    ->name('cardapios');
+
+Route::view('/equipe', 'equipe')
+    ->middleware('auth')
+    ->name('equipe');
+
+Route::view('/pedidos', 'pedidos')
+    ->middleware('auth')
+    ->name('pedidos');
+
 Route::post('/logout', function (Request $request) {
     Auth::logout();
 

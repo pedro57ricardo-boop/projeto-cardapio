@@ -82,6 +82,6 @@
     </form>
 
     <p class="auth-card__terms">
-        Ao continuar, você concorda com nossos <a href="#termos">termos de uso</a> e <a href="#privacidade">política de privacidade</a>.
+        Acesse sua conta ou crie uma nova para entrar no painel do restaurante.
     </p>
 </section>
